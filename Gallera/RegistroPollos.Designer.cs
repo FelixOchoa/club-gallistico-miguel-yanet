@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.PanelPollo = new System.Windows.Forms.Panel();
+            this.TBNombreDueno = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.BTRegPollo = new System.Windows.Forms.Button();
             this.TBColor = new System.Windows.Forms.TextBox();
             this.LBColor = new System.Windows.Forms.Label();
@@ -37,8 +39,6 @@
             this.TBID = new System.Windows.Forms.TextBox();
             this.LBID = new System.Windows.Forms.Label();
             this.LBRegistroPollo = new System.Windows.Forms.Label();
-            this.TBNombreDueno = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.PanelPollo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,12 +61,29 @@
             this.PanelPollo.TabIndex = 1;
             this.PanelPollo.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelPollo_Paint);
             // 
+            // TBNombreDueno
+            // 
+            this.TBNombreDueno.Location = new System.Drawing.Point(187, 222);
+            this.TBNombreDueno.Name = "TBNombreDueno";
+            this.TBNombreDueno.Size = new System.Drawing.Size(350, 29);
+            this.TBNombreDueno.TabIndex = 8;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(63, 228);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(120, 17);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Nombre del dueño";
+            // 
             // BTRegPollo
             // 
             this.BTRegPollo.Location = new System.Drawing.Point(255, 268);
             this.BTRegPollo.Name = "BTRegPollo";
             this.BTRegPollo.Size = new System.Drawing.Size(128, 57);
-            this.BTRegPollo.TabIndex = 7;
+            this.BTRegPollo.TabIndex = 9;
             this.BTRegPollo.Text = "Registrar Pollo";
             this.BTRegPollo.UseVisualStyleBackColor = true;
             this.BTRegPollo.Click += new System.EventHandler(this.BTRegPollo_Click);
@@ -132,23 +149,6 @@
             this.LBRegistroPollo.Size = new System.Drawing.Size(155, 25);
             this.LBRegistroPollo.TabIndex = 0;
             this.LBRegistroPollo.Text = "Registro de Pollo";
-            // 
-            // TBNombreDueno
-            // 
-            this.TBNombreDueno.Location = new System.Drawing.Point(187, 222);
-            this.TBNombreDueno.Name = "TBNombreDueno";
-            this.TBNombreDueno.Size = new System.Drawing.Size(350, 29);
-            this.TBNombreDueno.TabIndex = 11;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(63, 228);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 17);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Nombre del dueño";
             // 
             // RegistroPollos
             // 

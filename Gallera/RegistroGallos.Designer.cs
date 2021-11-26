@@ -66,7 +66,7 @@
             this.TBNombreDueno.Location = new System.Drawing.Point(156, 227);
             this.TBNombreDueno.Name = "TBNombreDueno";
             this.TBNombreDueno.Size = new System.Drawing.Size(350, 29);
-            this.TBNombreDueno.TabIndex = 9;
+            this.TBNombreDueno.TabIndex = 8;
             // 
             // label1
             // 
@@ -75,7 +75,7 @@
             this.label1.Location = new System.Drawing.Point(32, 233);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 17);
-            this.label1.TabIndex = 8;
+            this.label1.TabIndex = 7;
             this.label1.Text = "Nombre del dueño";
             // 
             // BTRegGallo
@@ -83,7 +83,7 @@
             this.BTRegGallo.Location = new System.Drawing.Point(258, 287);
             this.BTRegGallo.Name = "BTRegGallo";
             this.BTRegGallo.Size = new System.Drawing.Size(128, 57);
-            this.BTRegGallo.TabIndex = 7;
+            this.BTRegGallo.TabIndex = 9;
             this.BTRegGallo.Text = "Registrar Gallo";
             this.BTRegGallo.UseVisualStyleBackColor = true;
             this.BTRegGallo.Click += new System.EventHandler(this.BTRegGallo_Click);

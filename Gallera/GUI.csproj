@@ -53,6 +53,12 @@
     <Compile Include="InterfazSorteo.Designer.cs">
       <DependentUpon>InterfazSorteo.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterfazSorteoPollo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfazSorteoPollo.Designer.cs">
+      <DependentUpon>InterfazSorteoPollo.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListarGallos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
     </Compile>
     <EmbeddedResource Include="InterfazSorteo.resx">
       <DependentUpon>InterfazSorteo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfazSorteoPollo.resx">
+      <DependentUpon>InterfazSorteoPollo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListarGallos.resx">
       <DependentUpon>ListarGallos.cs</DependentUpon>

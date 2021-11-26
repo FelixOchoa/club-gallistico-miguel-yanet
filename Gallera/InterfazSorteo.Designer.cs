@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.PanelListarGallos = new System.Windows.Forms.Panel();
-            this.Btn_Emparejar = new System.Windows.Forms.Button();
             this.DgvGallos = new System.Windows.Forms.DataGridView();
             this.LBListarGallo = new System.Windows.Forms.Label();
             this.PanelListarGallos.SuspendLayout();
@@ -38,24 +37,15 @@
             // 
             // PanelListarGallos
             // 
-            this.PanelListarGallos.Controls.Add(this.Btn_Emparejar);
             this.PanelListarGallos.Controls.Add(this.DgvGallos);
             this.PanelListarGallos.Controls.Add(this.LBListarGallo);
             this.PanelListarGallos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelListarGallos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PanelListarGallos.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PanelListarGallos.Location = new System.Drawing.Point(0, 0);
             this.PanelListarGallos.Name = "PanelListarGallos";
             this.PanelListarGallos.Size = new System.Drawing.Size(762, 447);
             this.PanelListarGallos.TabIndex = 3;
-            // 
-            // Btn_Emparejar
-            // 
-            this.Btn_Emparejar.Location = new System.Drawing.Point(626, 71);
-            this.Btn_Emparejar.Name = "Btn_Emparejar";
-            this.Btn_Emparejar.Size = new System.Drawing.Size(92, 64);
-            this.Btn_Emparejar.TabIndex = 2;
-            this.Btn_Emparejar.Text = "Emparejar";
-            this.Btn_Emparejar.UseVisualStyleBackColor = true;
+            this.PanelListarGallos.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelListarGallos_Paint);
             // 
             // DgvGallos
             // 
@@ -64,21 +54,24 @@
             this.DgvGallos.AllowUserToOrderColumns = true;
             this.DgvGallos.AllowUserToResizeColumns = false;
             this.DgvGallos.AllowUserToResizeRows = false;
+            this.DgvGallos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvGallos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvGallos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.DgvGallos.Location = new System.Drawing.Point(29, 71);
+            this.DgvGallos.Location = new System.Drawing.Point(0, 71);
             this.DgvGallos.MultiSelect = false;
             this.DgvGallos.Name = "DgvGallos";
+            this.DgvGallos.ReadOnly = true;
             this.DgvGallos.RowHeadersVisible = false;
             this.DgvGallos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvGallos.Size = new System.Drawing.Size(576, 330);
+            this.DgvGallos.Size = new System.Drawing.Size(588, 330);
             this.DgvGallos.TabIndex = 1;
+            this.DgvGallos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvGallos_CellContentClick);
             // 
             // LBListarGallo
             // 
             this.LBListarGallo.AutoSize = true;
             this.LBListarGallo.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBListarGallo.Location = new System.Drawing.Point(35, 25);
+            this.LBListarGallo.Location = new System.Drawing.Point(222, 43);
             this.LBListarGallo.Name = "LBListarGallo";
             this.LBListarGallo.Size = new System.Drawing.Size(156, 25);
             this.LBListarGallo.TabIndex = 0;
@@ -101,10 +94,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel PanelListarGallos;
-        private System.Windows.Forms.Button Btn_Emparejar;
         private System.Windows.Forms.DataGridView DgvGallos;
         private System.Windows.Forms.Label LBListarGallo;
+        private System.Windows.Forms.Panel PanelListarGallos;
     }
 }

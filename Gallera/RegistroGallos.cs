@@ -44,7 +44,32 @@ namespace Gallera
             gallo.Pelea = "No";
             gallo.nombreDueno = TBNombreDueno.Text;
 
-            Gallos.Add(gallo);
+
+            if (TBID.Text == "")
+            {
+                MessageBox.Show("El campo de identificación está vacío", "Confirmar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (TBColor.Text == "")
+            {
+                MessageBox.Show("El campo de color está vacío", "Confirmar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (TBPeso.Text == "")
+            {
+                MessageBox.Show("El campo de peso está vacío", "Confirmar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (TBNombreDueno.Text == "")
+            {
+                MessageBox.Show("El campo nombre dueño está vacío", "Confirmar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                Gallos.Add(gallo);
+                TBID.Text = "";
+                TBColor.Text = "";
+                TBPeso.Text = "";
+                TBNombreDueno.Text = "";
+                MessageBox.Show("El Gallo se ha registrado correctamente", "Confirmar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void PanelGallo_Paint(object sender, PaintEventArgs e)

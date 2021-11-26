@@ -48,7 +48,33 @@ namespace Gallera
             pollo.Pelea = "No";
             pollo.nombreDueno = TBNombreDueno.Text;
 
-            Pollos.Add(pollo);
+
+            if (TBID.Text == "")
+            {
+                MessageBox.Show("El campo de identificación está vacío", "Confirmar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if(TBColor.Text == "")
+            {
+                MessageBox.Show("El campo de color está vacío", "Confirmar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (TBPeso.Text == "")
+            {
+                MessageBox.Show("El campo de peso está vacío", "Confirmar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if(TBNombreDueno.Text == "")
+            {
+                MessageBox.Show("El campo nombre dueño está vacío", "Confirmar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                Pollos.Add(pollo);
+
+                TBID.Text = "";
+                TBColor.Text = "";
+                TBPeso.Text = "";
+                TBNombreDueno.Text = "";
+                MessageBox.Show("El Pollo se ha registrado correctamente", "Confirmar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

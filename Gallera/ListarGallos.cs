@@ -66,6 +66,7 @@ namespace Gallera
             string id = DgvGallos.CurrentRow.Cells["nombre"].Value.ToString();
 
             gallo = Gallos.Find(predicate => predicate.Id.Equals(id));
+            if (gallo.Pelea.Equals("Si")) { return; }
 
             Gallos.OrderBy(subject => subject.Peso);
             Gallos.ForEach( subject => {
@@ -107,5 +108,10 @@ namespace Gallera
 
             }
          }
+
+        private void DgvGallos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

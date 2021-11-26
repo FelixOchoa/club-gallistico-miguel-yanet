@@ -31,12 +31,14 @@
             this.PanelListarGallos = new System.Windows.Forms.Panel();
             this.DGVPollos = new System.Windows.Forms.DataGridView();
             this.LBListarPollos = new System.Windows.Forms.Label();
+            this.BTRegGallo = new System.Windows.Forms.Button();
             this.PanelListarGallos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVPollos)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelListarGallos
             // 
+            this.PanelListarGallos.Controls.Add(this.BTRegGallo);
             this.PanelListarGallos.Controls.Add(this.DGVPollos);
             this.PanelListarGallos.Controls.Add(this.LBListarPollos);
             this.PanelListarGallos.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -75,6 +77,16 @@
             this.LBListarPollos.TabIndex = 0;
             this.LBListarPollos.Text = "Listado de Pollos";
             // 
+            // BTRegGallo
+            // 
+            this.BTRegGallo.Location = new System.Drawing.Point(248, 409);
+            this.BTRegGallo.Name = "BTRegGallo";
+            this.BTRegGallo.Size = new System.Drawing.Size(116, 28);
+            this.BTRegGallo.TabIndex = 9;
+            this.BTRegGallo.Text = "Emparejar ";
+            this.BTRegGallo.UseVisualStyleBackColor = true;
+            this.BTRegGallo.Click += new System.EventHandler(this.BTRegGallo_Click);
+            // 
             // ListarPollos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -96,5 +108,6 @@
         private System.Windows.Forms.Panel PanelListarGallos;
         private System.Windows.Forms.DataGridView DGVPollos;
         private System.Windows.Forms.Label LBListarPollos;
+        private System.Windows.Forms.Button BTRegGallo;
     }
 }

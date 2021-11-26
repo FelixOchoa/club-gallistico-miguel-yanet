@@ -1,6 +1,6 @@
 ﻿namespace Gallera
 {
-    partial class ListarGallos
+    partial class InterfazSorteoPollo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,36 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.PanelListarGallos = new System.Windows.Forms.Panel();
-            this.BTRegGallo = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.DgvGallos = new System.Windows.Forms.DataGridView();
             this.LBListarGallo = new System.Windows.Forms.Label();
-            this.PanelListarGallos.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvGallos)).BeginInit();
             this.SuspendLayout();
             // 
-            // PanelListarGallos
+            // panel1
             // 
-            this.PanelListarGallos.Controls.Add(this.BTRegGallo);
-            this.PanelListarGallos.Controls.Add(this.DgvGallos);
-            this.PanelListarGallos.Controls.Add(this.LBListarGallo);
-            this.PanelListarGallos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelListarGallos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PanelListarGallos.Location = new System.Drawing.Point(0, 0);
-            this.PanelListarGallos.Name = "PanelListarGallos";
-            this.PanelListarGallos.Size = new System.Drawing.Size(616, 449);
-            this.PanelListarGallos.TabIndex = 2;
-            this.PanelListarGallos.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelListarGallos_Paint);
-            // 
-            // BTRegGallo
-            // 
-            this.BTRegGallo.Location = new System.Drawing.Point(245, 409);
-            this.BTRegGallo.Name = "BTRegGallo";
-            this.BTRegGallo.Size = new System.Drawing.Size(116, 28);
-            this.BTRegGallo.TabIndex = 8;
-            this.BTRegGallo.Text = "Emparejar ";
-            this.BTRegGallo.UseVisualStyleBackColor = true;
-            this.BTRegGallo.Click += new System.EventHandler(this.BTRegGallo_Click);
+            this.panel1.Controls.Add(this.LBListarGallo);
+            this.panel1.Controls.Add(this.DgvGallos);
+            this.panel1.Location = new System.Drawing.Point(1, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(603, 407);
+            this.panel1.TabIndex = 0;
             // 
             // DgvGallos
             // 
@@ -66,39 +51,39 @@
             this.DgvGallos.AllowUserToOrderColumns = true;
             this.DgvGallos.AllowUserToResizeColumns = false;
             this.DgvGallos.AllowUserToResizeRows = false;
+            this.DgvGallos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvGallos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvGallos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.DgvGallos.Location = new System.Drawing.Point(3, 71);
+            this.DgvGallos.Location = new System.Drawing.Point(7, 38);
             this.DgvGallos.MultiSelect = false;
             this.DgvGallos.Name = "DgvGallos";
+            this.DgvGallos.ReadOnly = true;
             this.DgvGallos.RowHeadersVisible = false;
-            this.DgvGallos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.DgvGallos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvGallos.Size = new System.Drawing.Size(610, 330);
-            this.DgvGallos.TabIndex = 1;
-            this.DgvGallos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvGallos_CellContentClick);
+            this.DgvGallos.Size = new System.Drawing.Size(588, 330);
+            this.DgvGallos.TabIndex = 2;
             // 
             // LBListarGallo
             // 
             this.LBListarGallo.AutoSize = true;
             this.LBListarGallo.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBListarGallo.Location = new System.Drawing.Point(35, 25);
+            this.LBListarGallo.Location = new System.Drawing.Point(228, 7);
             this.LBListarGallo.Name = "LBListarGallo";
-            this.LBListarGallo.Size = new System.Drawing.Size(156, 25);
-            this.LBListarGallo.TabIndex = 0;
-            this.LBListarGallo.Text = "Listado de Gallos";
+            this.LBListarGallo.Size = new System.Drawing.Size(154, 25);
+            this.LBListarGallo.TabIndex = 3;
+            this.LBListarGallo.Text = "Listado de Pollos";
             // 
-            // ListarGallos
+            // InterfazSorteoPollo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(616, 449);
-            this.Controls.Add(this.PanelListarGallos);
+            this.ClientSize = new System.Drawing.Size(605, 410);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ListarGallos";
-            this.Text = "ListarGallos";
-            this.PanelListarGallos.ResumeLayout(false);
-            this.PanelListarGallos.PerformLayout();
+            this.Name = "InterfazSorteoPollo";
+            this.Text = "InterfazSorteoPollo";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvGallos)).EndInit();
             this.ResumeLayout(false);
 
@@ -106,9 +91,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel PanelListarGallos;
-        private System.Windows.Forms.Label LBListarGallo;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView DgvGallos;
-        private System.Windows.Forms.Button BTRegGallo;
+        private System.Windows.Forms.Label LBListarGallo;
     }
 }

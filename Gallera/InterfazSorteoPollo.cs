@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Gallera
 {
-    public partial class InterfazSorteo : Form
+    public partial class InterfazSorteoPollo : Form
     {
-        public List<Pelea> Peleas { get; set; }
-        public InterfazSorteo(List<Pelea> peleas)
+        public List<Pelea2> Peleas { get; set; }
+        public InterfazSorteoPollo(List<Pelea2> peleas)
         {
             InitializeComponent();
             establecerColumnasDeTabla();
@@ -23,10 +23,10 @@ namespace Gallera
 
         private void establecerColumnasDeTabla()
         {
-            DgvGallos.Columns.Add("nombre1", "Gallo 1");
+            DgvGallos.Columns.Add("nombre1", "Pollo 1");
             DgvGallos.Columns.Add("peso1", "Peso");
             DgvGallos.Columns.Add("nombredueno1", "Dueño 1");
-            DgvGallos.Columns.Add("nombre2", "Gallo 2");
+            DgvGallos.Columns.Add("nombre2", "Pollo 2");
             DgvGallos.Columns.Add("peso2", "Peso");
             DgvGallos.Columns.Add("nombredueno2", "Dueño 2");
 
@@ -44,29 +44,14 @@ namespace Gallera
             foreach (var pelea in Peleas)
             {
                 DgvGallos.Rows.Add(
-                    pelea.Gallo1.Id,
-                    pelea.Gallo1.Peso,
-                    pelea.Gallo1.nombreDueno,
-                    pelea.Gallo2.Id,
-                    pelea.Gallo2.Peso,
-                    pelea.Gallo2.nombreDueno
+                    pelea.Pollo1.Id,
+                    pelea.Pollo1.Peso,
+                    pelea.Pollo1.nombreDueno,
+                    pelea.Pollo2.Id,
+                    pelea.Pollo2.Peso,
+                    pelea.Pollo2.nombreDueno
                 );
             }
-        }
-
-        private void PanelListarGallos_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Btn_Emparejar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DgvGallos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }
