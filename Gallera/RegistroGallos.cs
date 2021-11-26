@@ -42,9 +42,14 @@ namespace Gallera
             gallo.Color = TBColor.Text;
             gallo.Peso = TBPeso.Text;
             gallo.Pelea = "No";
+            gallo.nombreDueno = TBNombreDueno.Text;
 
             Gallos.Add(gallo);
         }
 
+        private void PanelGallo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

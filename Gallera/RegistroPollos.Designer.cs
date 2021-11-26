@@ -37,11 +37,15 @@
             this.TBID = new System.Windows.Forms.TextBox();
             this.LBID = new System.Windows.Forms.Label();
             this.LBRegistroPollo = new System.Windows.Forms.Label();
+            this.TBNombreDueno = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.PanelPollo.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelPollo
             // 
+            this.PanelPollo.Controls.Add(this.TBNombreDueno);
+            this.PanelPollo.Controls.Add(this.label1);
             this.PanelPollo.Controls.Add(this.BTRegPollo);
             this.PanelPollo.Controls.Add(this.TBColor);
             this.PanelPollo.Controls.Add(this.LBColor);
@@ -55,19 +59,21 @@
             this.PanelPollo.Name = "PanelPollo";
             this.PanelPollo.Size = new System.Drawing.Size(621, 449);
             this.PanelPollo.TabIndex = 1;
+            this.PanelPollo.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelPollo_Paint);
             // 
             // BTRegPollo
             // 
-            this.BTRegPollo.Location = new System.Drawing.Point(258, 287);
+            this.BTRegPollo.Location = new System.Drawing.Point(255, 268);
             this.BTRegPollo.Name = "BTRegPollo";
             this.BTRegPollo.Size = new System.Drawing.Size(128, 57);
             this.BTRegPollo.TabIndex = 7;
             this.BTRegPollo.Text = "Registrar Pollo";
             this.BTRegPollo.UseVisualStyleBackColor = true;
+            this.BTRegPollo.Click += new System.EventHandler(this.BTRegPollo_Click);
             // 
             // TBColor
             // 
-            this.TBColor.Location = new System.Drawing.Point(156, 224);
+            this.TBColor.Location = new System.Drawing.Point(187, 179);
             this.TBColor.Name = "TBColor";
             this.TBColor.Size = new System.Drawing.Size(350, 29);
             this.TBColor.TabIndex = 6;
@@ -76,7 +82,7 @@
             // 
             this.LBColor.AutoSize = true;
             this.LBColor.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBColor.Location = new System.Drawing.Point(110, 230);
+            this.LBColor.Location = new System.Drawing.Point(141, 185);
             this.LBColor.Name = "LBColor";
             this.LBColor.Size = new System.Drawing.Size(40, 17);
             this.LBColor.TabIndex = 5;
@@ -84,7 +90,7 @@
             // 
             // TBPeso
             // 
-            this.TBPeso.Location = new System.Drawing.Point(156, 180);
+            this.TBPeso.Location = new System.Drawing.Point(187, 135);
             this.TBPeso.Name = "TBPeso";
             this.TBPeso.Size = new System.Drawing.Size(350, 29);
             this.TBPeso.TabIndex = 4;
@@ -94,7 +100,7 @@
             // 
             this.LBPeso.AutoSize = true;
             this.LBPeso.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBPeso.Location = new System.Drawing.Point(114, 186);
+            this.LBPeso.Location = new System.Drawing.Point(145, 141);
             this.LBPeso.Name = "LBPeso";
             this.LBPeso.Size = new System.Drawing.Size(36, 17);
             this.LBPeso.TabIndex = 3;
@@ -102,7 +108,7 @@
             // 
             // TBID
             // 
-            this.TBID.Location = new System.Drawing.Point(156, 136);
+            this.TBID.Location = new System.Drawing.Point(187, 91);
             this.TBID.Name = "TBID";
             this.TBID.Size = new System.Drawing.Size(350, 29);
             this.TBID.TabIndex = 2;
@@ -111,21 +117,38 @@
             // 
             this.LBID.AutoSize = true;
             this.LBID.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBID.Location = new System.Drawing.Point(66, 142);
+            this.LBID.Location = new System.Drawing.Point(42, 97);
             this.LBID.Name = "LBID";
-            this.LBID.Size = new System.Drawing.Size(84, 17);
+            this.LBID.Size = new System.Drawing.Size(140, 17);
             this.LBID.TabIndex = 1;
-            this.LBID.Text = "Identificación";
+            this.LBID.Text = "Identificación del pollo";
             // 
             // LBRegistroPollo
             // 
             this.LBRegistroPollo.AutoSize = true;
             this.LBRegistroPollo.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBRegistroPollo.Location = new System.Drawing.Point(49, 96);
+            this.LBRegistroPollo.Location = new System.Drawing.Point(80, 51);
             this.LBRegistroPollo.Name = "LBRegistroPollo";
             this.LBRegistroPollo.Size = new System.Drawing.Size(155, 25);
             this.LBRegistroPollo.TabIndex = 0;
             this.LBRegistroPollo.Text = "Registro de Pollo";
+            // 
+            // TBNombreDueno
+            // 
+            this.TBNombreDueno.Location = new System.Drawing.Point(187, 222);
+            this.TBNombreDueno.Name = "TBNombreDueno";
+            this.TBNombreDueno.Size = new System.Drawing.Size(350, 29);
+            this.TBNombreDueno.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(63, 228);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(120, 17);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Nombre del dueño";
             // 
             // RegistroPollos
             // 
@@ -153,5 +176,7 @@
         private System.Windows.Forms.TextBox TBID;
         private System.Windows.Forms.Label LBID;
         private System.Windows.Forms.Label LBRegistroPollo;
+        private System.Windows.Forms.TextBox TBNombreDueno;
+        private System.Windows.Forms.Label label1;
     }
 }

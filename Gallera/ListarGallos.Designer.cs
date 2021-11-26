@@ -44,6 +44,7 @@
             this.PanelListarGallos.Name = "PanelListarGallos";
             this.PanelListarGallos.Size = new System.Drawing.Size(621, 449);
             this.PanelListarGallos.TabIndex = 2;
+            this.PanelListarGallos.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelListarGallos_Paint);
             // 
             // DgvGallos
             // 

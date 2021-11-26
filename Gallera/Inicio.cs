@@ -49,7 +49,7 @@ namespace Gallera
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            openForm(new RegistroPollos());
+            openForm(new RegistroPollos(Pollos));
         }
 
         private void BTListarGallo_Click(object sender, EventArgs e)
@@ -60,7 +60,7 @@ namespace Gallera
 
         private void BTListarPollo_Click(object sender, EventArgs e)
         {
-            openForm(new ListarPollos());
+            openForm(new ListarPollos(Pollos));
 
         }
     }

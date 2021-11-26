@@ -27,6 +27,7 @@ namespace Gallera
             DgvGallos.Columns.Add("peso", "Peso");
             DgvGallos.Columns.Add("color", "Color");
             DgvGallos.Columns.Add("pelea", "Pelea");
+            DgvGallos.Columns.Add("nombreDueno", "Nombre Dueño");
         }
 
         private void ActualizarTabla()
@@ -38,10 +39,15 @@ namespace Gallera
                     gallo.Id,
                     gallo.Peso,
                     gallo.Color,
-                    gallo.Pelea
-
+                    gallo.Pelea,
+                    gallo.nombreDueno
                 );
             }
+        }
+
+        private void PanelListarGallos_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
