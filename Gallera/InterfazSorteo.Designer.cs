@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.PanelListarGallos = new System.Windows.Forms.Panel();
+            this.Btn_Emparejar = new System.Windows.Forms.Button();
             this.DgvGallos = new System.Windows.Forms.DataGridView();
             this.LBListarGallo = new System.Windows.Forms.Label();
-            this.Btn_Emparejar = new System.Windows.Forms.Button();
             this.PanelListarGallos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvGallos)).BeginInit();
             this.SuspendLayout();
@@ -48,12 +48,30 @@
             this.PanelListarGallos.Size = new System.Drawing.Size(762, 447);
             this.PanelListarGallos.TabIndex = 3;
             // 
+            // Btn_Emparejar
+            // 
+            this.Btn_Emparejar.Location = new System.Drawing.Point(626, 71);
+            this.Btn_Emparejar.Name = "Btn_Emparejar";
+            this.Btn_Emparejar.Size = new System.Drawing.Size(92, 64);
+            this.Btn_Emparejar.TabIndex = 2;
+            this.Btn_Emparejar.Text = "Emparejar";
+            this.Btn_Emparejar.UseVisualStyleBackColor = true;
+            // 
             // DgvGallos
             // 
+            this.DgvGallos.AllowUserToAddRows = false;
+            this.DgvGallos.AllowUserToDeleteRows = false;
+            this.DgvGallos.AllowUserToOrderColumns = true;
+            this.DgvGallos.AllowUserToResizeColumns = false;
+            this.DgvGallos.AllowUserToResizeRows = false;
             this.DgvGallos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvGallos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.DgvGallos.Location = new System.Drawing.Point(29, 71);
+            this.DgvGallos.MultiSelect = false;
             this.DgvGallos.Name = "DgvGallos";
-            this.DgvGallos.Size = new System.Drawing.Size(550, 330);
+            this.DgvGallos.RowHeadersVisible = false;
+            this.DgvGallos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DgvGallos.Size = new System.Drawing.Size(576, 330);
             this.DgvGallos.TabIndex = 1;
             // 
             // LBListarGallo
@@ -65,15 +83,6 @@
             this.LBListarGallo.Size = new System.Drawing.Size(156, 25);
             this.LBListarGallo.TabIndex = 0;
             this.LBListarGallo.Text = "Listado de Gallos";
-            // 
-            // Btn_Emparejar
-            // 
-            this.Btn_Emparejar.Location = new System.Drawing.Point(626, 71);
-            this.Btn_Emparejar.Name = "Btn_Emparejar";
-            this.Btn_Emparejar.Size = new System.Drawing.Size(92, 64);
-            this.Btn_Emparejar.TabIndex = 2;
-            this.Btn_Emparejar.Text = "Emparejar";
-            this.Btn_Emparejar.UseVisualStyleBackColor = true;
             // 
             // InterfazSorteo
             // 

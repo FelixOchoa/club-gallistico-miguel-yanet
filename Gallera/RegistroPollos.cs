@@ -36,7 +36,12 @@ namespace Gallera
 
         private void PanelPollo_Paint(object sender, PaintEventArgs e)
         {
-            Pollo pollo =  new Pollo();
+            
+        }
+
+        private void BTRegPollo_Click(object sender, EventArgs e)
+        {
+            Pollo pollo = new Pollo();
             pollo.Id = TBID.Text;
             pollo.Color = TBColor.Text;
             pollo.Peso = TBPeso.Text;
@@ -44,11 +49,6 @@ namespace Gallera
             pollo.nombreDueno = TBNombreDueno.Text;
 
             Pollos.Add(pollo);
-        }
-
-        private void BTRegPollo_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

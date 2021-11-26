@@ -107,6 +107,7 @@
             this.BTSorteo.TabIndex = 7;
             this.BTSorteo.Text = "Sorteo";
             this.BTSorteo.UseVisualStyleBackColor = true;
+            this.BTSorteo.Click += new System.EventHandler(this.BTSorteo_Click);
             // 
             // Inicio
             // 

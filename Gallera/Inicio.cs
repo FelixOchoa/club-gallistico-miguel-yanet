@@ -14,6 +14,7 @@ namespace Gallera
     {
         public List<Gallo> Gallos { get; set; }
         public List<Pollo> Pollos { get; set; }
+        public List<Pelea> Peleas { get; set; }
 
         public Inicio()
         {
@@ -24,7 +25,8 @@ namespace Gallera
         private void IniciarListas()
         {
             Gallos = new List<Gallo>();
-            Pollos = new List<Pollo>(); 
+            Pollos = new List<Pollo>();
+            Peleas = new List<Pelea>();
         }
         private void openForm(object formChild)
         {
@@ -54,7 +56,7 @@ namespace Gallera
 
         private void BTListarGallo_Click(object sender, EventArgs e)
         {
-            openForm(new ListarGallos(Gallos));
+            openForm(new ListarGallos(Gallos, Peleas));
 
         }
 
@@ -62,6 +64,11 @@ namespace Gallera
         {
             openForm(new ListarPollos(Pollos));
 
+        }
+
+        private void BTSorteo_Click(object sender, EventArgs e)
+        {
+            openForm(new InterfazSorteo(Peleas));
         }
     }
 }

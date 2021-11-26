@@ -33,6 +33,10 @@ namespace Gallera
             DGVPollos.Columns.Add("color", "Color");
             DGVPollos.Columns.Add("pelea", "Pelea");
             DGVPollos.Columns.Add("nombreDueno", "Nombre Dueño");
+            foreach ( DataGridViewTextBoxColumn columna in DGVPollos.Columns)
+            {
+                columna.Width = 121; 
+            }
         }
 
         private void ActualizarTabla()

@@ -39,19 +39,30 @@
             // 
             this.PanelListarGallos.Controls.Add(this.DGVPollos);
             this.PanelListarGallos.Controls.Add(this.LBListarPollos);
+            this.PanelListarGallos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelListarGallos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PanelListarGallos.Location = new System.Drawing.Point(8, 8);
+            this.PanelListarGallos.Location = new System.Drawing.Point(0, 0);
             this.PanelListarGallos.Name = "PanelListarGallos";
-            this.PanelListarGallos.Size = new System.Drawing.Size(621, 449);
+            this.PanelListarGallos.Size = new System.Drawing.Size(616, 449);
             this.PanelListarGallos.TabIndex = 3;
             this.PanelListarGallos.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelListarGallos_Paint);
             // 
             // DGVPollos
             // 
+            this.DGVPollos.AllowUserToAddRows = false;
+            this.DGVPollos.AllowUserToDeleteRows = false;
+            this.DGVPollos.AllowUserToOrderColumns = true;
+            this.DGVPollos.AllowUserToResizeColumns = false;
+            this.DGVPollos.AllowUserToResizeRows = false;
             this.DGVPollos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVPollos.Location = new System.Drawing.Point(29, 71);
+            this.DGVPollos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.DGVPollos.Location = new System.Drawing.Point(3, 70);
+            this.DGVPollos.MultiSelect = false;
             this.DGVPollos.Name = "DGVPollos";
-            this.DGVPollos.Size = new System.Drawing.Size(550, 330);
+            this.DGVPollos.RowHeadersVisible = false;
+            this.DGVPollos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.DGVPollos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGVPollos.Size = new System.Drawing.Size(610, 330);
             this.DGVPollos.TabIndex = 1;
             // 
             // LBListarPollos
@@ -68,7 +79,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(621, 449);
+            this.ClientSize = new System.Drawing.Size(616, 449);
             this.Controls.Add(this.PanelListarGallos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ListarPollos";

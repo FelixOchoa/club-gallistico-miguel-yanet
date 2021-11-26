@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.PanelGallo = new System.Windows.Forms.Panel();
+            this.TBNombreDueno = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.BTRegGallo = new System.Windows.Forms.Button();
             this.TBColor = new System.Windows.Forms.TextBox();
             this.LBColor = new System.Windows.Forms.Label();
@@ -37,8 +39,6 @@
             this.TBID = new System.Windows.Forms.TextBox();
             this.LBID = new System.Windows.Forms.Label();
             this.LBRegistroGallo = new System.Windows.Forms.Label();
-            this.TBNombreDueno = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.PanelGallo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,6 +60,23 @@
             this.PanelGallo.Size = new System.Drawing.Size(621, 449);
             this.PanelGallo.TabIndex = 0;
             this.PanelGallo.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelGallo_Paint);
+            // 
+            // TBNombreDueno
+            // 
+            this.TBNombreDueno.Location = new System.Drawing.Point(156, 227);
+            this.TBNombreDueno.Name = "TBNombreDueno";
+            this.TBNombreDueno.Size = new System.Drawing.Size(350, 29);
+            this.TBNombreDueno.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(32, 233);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(120, 17);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Nombre del dueño";
             // 
             // BTRegGallo
             // 
@@ -132,23 +149,6 @@
             this.LBRegistroGallo.Size = new System.Drawing.Size(157, 25);
             this.LBRegistroGallo.TabIndex = 0;
             this.LBRegistroGallo.Text = "Registro de Gallo";
-            // 
-            // TBNombreDueno
-            // 
-            this.TBNombreDueno.Location = new System.Drawing.Point(156, 227);
-            this.TBNombreDueno.Name = "TBNombreDueno";
-            this.TBNombreDueno.Size = new System.Drawing.Size(350, 29);
-            this.TBNombreDueno.TabIndex = 9;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(32, 233);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 17);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Nombre del dueño";
             // 
             // RegistroGallos
             // 
