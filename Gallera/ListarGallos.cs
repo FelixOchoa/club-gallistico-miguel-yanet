@@ -58,13 +58,9 @@ namespace Gallera
 
         private void BTRegGallo_Click(object sender, EventArgs e)
         {
-            //Gallo gallo = new Gallo();
             List <Gallo> gallosMatch = new List<Gallo>();
             List<Gallo> gallosNoMatch = new List<Gallo>();
             bool noSeHagaMatch = false;
-
-            //string id = DgvGallos.CurrentRow.Cells["nombre"].Value.ToString();
-            //gallo = Gallos.Find(predicate => predicate.Id.Equals(id));
 
             foreach (var gallo in Gallos)
             {

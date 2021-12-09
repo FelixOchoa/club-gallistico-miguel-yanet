@@ -54,30 +54,21 @@ namespace Gallera
             }
         }
 
-        private void PanelListarGallos_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Btn_Emparejar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DgvGallos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void btn_cancelarPelea_Click(object sender, EventArgs e)
         {
-            string id1 = DgvGallos.CurrentRow.Cells["nombre1"].Value.ToString();
-            string id2 = DgvGallos.CurrentRow.Cells["nombre2"].Value.ToString();
-            Pelea pelea = Peleas.Find(predicate => predicate.Gallo1.Id.Equals(id1));
+            string id = DgvGallos.CurrentRow.Cells["nombre1"].Value.ToString();
+            Pelea pelea = Peleas.Find(predicate => predicate.Gallo1.Id.Equals(id));
             pelea.Gallo1.Pelea = "No";
             pelea.Gallo2.Pelea = "No";
             Peleas.Remove(pelea);
             ActualizarTabla();
+        }
+
+        private void btn_generarPdf_Click(object sender, EventArgs e)
+        {
+            folderBrowserDialog1.ShowDialog();
+            GeneradorPdf generador = new GeneradorPdf(Peleas, folderBrowserDialog1.SelectedPath, inpt_nombrePdf.Text);
+            generador.Crear();
         }
     }
 }

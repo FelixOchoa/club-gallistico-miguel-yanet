@@ -6,12 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gallera
 {
-    public class Gallo
+    public class Gallo : Animal
     {
-        public string Id { get; set; }
-        public string Peso { get; set; }
-        public string Color { get; set; }
-        public string Pelea { get; set; }
-        public string nombreDueno { get; set; }
     }
 }
