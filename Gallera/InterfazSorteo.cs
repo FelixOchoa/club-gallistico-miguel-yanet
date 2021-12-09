@@ -68,5 +68,16 @@ namespace Gallera
         {
 
         }
+
+        private void btn_cancelarPelea_Click(object sender, EventArgs e)
+        {
+            string id1 = DgvGallos.CurrentRow.Cells["nombre1"].Value.ToString();
+            string id2 = DgvGallos.CurrentRow.Cells["nombre2"].Value.ToString();
+            Pelea pelea = Peleas.Find(predicate => predicate.Gallo1.Id.Equals(id1));
+            pelea.Gallo1.Pelea = "No";
+            pelea.Gallo2.Pelea = "No";
+            Peleas.Remove(pelea);
+            ActualizarTabla();
+        }
     }
 }

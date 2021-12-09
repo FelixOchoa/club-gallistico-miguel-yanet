@@ -58,54 +58,61 @@ namespace Gallera
 
         private void BTRegGallo_Click(object sender, EventArgs e)
         {
-            Gallo gallo = new Gallo();
+            //Gallo gallo = new Gallo();
             List <Gallo> gallosMatch = new List<Gallo>();
             List<Gallo> gallosNoMatch = new List<Gallo>();
             bool noSeHagaMatch = false;
 
-            string id = DgvGallos.CurrentRow.Cells["nombre"].Value.ToString();
+            //string id = DgvGallos.CurrentRow.Cells["nombre"].Value.ToString();
+            //gallo = Gallos.Find(predicate => predicate.Id.Equals(id));
 
-            gallo = Gallos.Find(predicate => predicate.Id.Equals(id));
-            if (gallo.Pelea.Equals("Si")) { return; }
-
-            Gallos.OrderBy(subject => subject.Peso);
-            Gallos.ForEach( subject => {
-                if((gallo.Peso == subject.Peso) && subject.Pelea.Equals("No"))
-                {
-                    gallosMatch.Add(subject); 
-                }
-                else
-                {
-                    gallosNoMatch.Add(subject);
-                }
-            });
-
-            gallosMatch.OrderBy( subject => subject.Peso);
-            gallosNoMatch.OrderBy( subject => subject.Peso);
-
-            if(gallosMatch.Count != 0)
+            foreach (var gallo in Gallos)
             {
-                do
-                {
-                    Gallo galloMatch = gallosMatch[new Random().Next(0, gallosMatch.Count)];
-                    galloMatch = galloMatch.Id.Equals(gallo.Id) ? null : galloMatch;
+                if (gallo.Pelea.Equals("Si")) { continue; }
 
-                    if (galloMatch is null)
+                Gallos.OrderBy(subject => subject.Peso);
+                Gallos.ForEach(subject =>
+                {
+                    if ((gallo.Peso == subject.Peso) && subject.Pelea.Equals("No"))
                     {
-                        noSeHagaMatch = true;
-                        break;
+                        gallosMatch.Add(subject);
                     }
                     else
                     {
-                        galloMatch.Pelea = "Si";
-                        gallo.Pelea = "Si";
-                        Pelea pelea = new Pelea(gallo, galloMatch);
-                        Peleas.Add(pelea);
-                        ActualizarTabla();
+                        gallosNoMatch.Add(subject);
                     }
+                });
 
-                } while (noSeHagaMatch);
+                gallosMatch.OrderBy(subject => subject.Peso);
+                gallosNoMatch.OrderBy(subject => subject.Peso);
 
+                if (gallosMatch.Count != 0)
+                {
+                    do
+                    {
+                        Gallo galloMatch = gallosMatch[new Random().Next(0, gallosMatch.Count)];
+                        galloMatch = galloMatch.Id.Equals(gallo.Id) ? null : galloMatch;
+
+                        if (galloMatch is null)
+                        {
+                            noSeHagaMatch = true;
+                            break;
+                        }
+                        else
+                        {
+                            noSeHagaMatch = false;
+                            galloMatch.Pelea = "Si";
+                            gallo.Pelea = "Si";
+                            Pelea pelea = new Pelea(gallo, galloMatch);
+                            Peleas.Add(pelea);
+                            ActualizarTabla();
+                        }
+
+                    } while (noSeHagaMatch);
+
+                }
+                gallosMatch.Clear();
+                gallosNoMatch.Clear();
             }
          }
 

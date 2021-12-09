@@ -31,12 +31,14 @@
             this.PanelListarGallos = new System.Windows.Forms.Panel();
             this.DgvGallos = new System.Windows.Forms.DataGridView();
             this.LBListarGallo = new System.Windows.Forms.Label();
+            this.btn_cancelarPelea = new System.Windows.Forms.Button();
             this.PanelListarGallos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvGallos)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelListarGallos
             // 
+            this.PanelListarGallos.Controls.Add(this.btn_cancelarPelea);
             this.PanelListarGallos.Controls.Add(this.DgvGallos);
             this.PanelListarGallos.Controls.Add(this.LBListarGallo);
             this.PanelListarGallos.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -77,6 +79,18 @@
             this.LBListarGallo.TabIndex = 0;
             this.LBListarGallo.Text = "Listado de Gallos";
             // 
+            // btn_cancelarPelea
+            // 
+            this.btn_cancelarPelea.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.btn_cancelarPelea.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btn_cancelarPelea.Location = new System.Drawing.Point(79, 405);
+            this.btn_cancelarPelea.Name = "btn_cancelarPelea";
+            this.btn_cancelarPelea.Size = new System.Drawing.Size(127, 39);
+            this.btn_cancelarPelea.TabIndex = 9;
+            this.btn_cancelarPelea.Text = "Cancelar pelea";
+            this.btn_cancelarPelea.UseVisualStyleBackColor = true;
+            this.btn_cancelarPelea.Click += new System.EventHandler(this.btn_cancelarPelea_Click);
+            // 
             // InterfazSorteo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -97,5 +111,6 @@
         private System.Windows.Forms.DataGridView DgvGallos;
         private System.Windows.Forms.Label LBListarGallo;
         private System.Windows.Forms.Panel PanelListarGallos;
+        private System.Windows.Forms.Button btn_cancelarPelea;
     }
 }
