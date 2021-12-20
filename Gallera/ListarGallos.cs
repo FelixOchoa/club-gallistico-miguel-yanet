@@ -65,16 +65,28 @@ namespace Gallera
             foreach (var gallo in Gallos)
             {
                 if (gallo.Pelea.Equals("Si")) { continue; }
-
+                double x = 0;
+                double y = 0;
+                double z = 0;
+                double tot = 0;
                 Gallos.OrderBy(subject => subject.Peso);
                 Gallos.ForEach(subject =>
                 {
-                    if ((gallo.Peso == subject.Peso) && subject.Pelea.Equals("No"))
+                    if ((Math.Abs(gallo.Peso - subject.Peso) <= 0.10000000000000142) && subject.Pelea.Equals("No"))
                     {
+                        y = gallo.Peso;
+                        z = subject.Peso;
+                        tot = gallo.Peso - subject.Peso;
+                        x = Math.Abs(gallo.Peso - subject.Peso);
+
                         gallosMatch.Add(subject);
                     }
                     else
                     {
+                        y = gallo.Peso;
+                        z = subject.Peso;
+                        tot = gallo.Peso - subject.Peso;
+                        x = Math.Abs(gallo.Peso - subject.Peso);
                         gallosNoMatch.Add(subject);
                     }
                 });

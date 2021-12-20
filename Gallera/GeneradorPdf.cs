@@ -82,13 +82,13 @@ namespace Gallera
             {
                 AnimalA = new PdfPCell(new Phrase(animal.Gallo1.Id, fuente));
                 AnimalA.BorderWidth = 0;
-                PesoA = new PdfPCell(new Phrase(animal.Gallo1.Peso, fuente));
+                PesoA = new PdfPCell(new Phrase(animal.Gallo1.Peso.ToString(), fuente));
                 PesoA.BorderWidth = 0;
-                DuenioA = new PdfPCell(new Phrase(animal.Gallo1.nombreDueno, fuente));
+                DuenioA = new PdfPCell(new Phrase(animal.Gallo1.nombreDueno.ToString(), fuente));
                 DuenioA.BorderWidth = 0;
                 AnimalB = new PdfPCell(new Phrase(animal.Gallo2.Id, fuente));
                 AnimalB.BorderWidth = 0;
-                PesoB = new PdfPCell(new Phrase(animal.Gallo2.Peso, fuente));
+                PesoB = new PdfPCell(new Phrase(animal.Gallo2.Peso.ToString(), fuente));
                 PesoB.BorderWidth = 0;
                 DuenioB = new PdfPCell(new Phrase(animal.Gallo2.nombreDueno, fuente));
                 DuenioB.BorderWidth = 0;

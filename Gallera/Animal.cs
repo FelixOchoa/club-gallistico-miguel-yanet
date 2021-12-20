@@ -9,7 +9,7 @@ namespace Gallera
     public class Animal
     {
         public string Id { get; set; }
-        public string Peso { get; set; }
+        public double Peso { get; set; }
         public string Color { get; set; }
         public string Pelea { get; set; }
         public string nombreDueno { get; set; }

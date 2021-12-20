@@ -44,7 +44,7 @@ namespace Gallera
             Pollo pollo = new Pollo();
             pollo.Id = TBID.Text;
             pollo.Color = TBColor.Text;
-            pollo.Peso = TBPeso.Text;
+            pollo.Peso = Convert.ToDouble(TBPeso.Text);
             pollo.Pelea = "No";
             pollo.nombreDueno = TBNombreDueno.Text;
 

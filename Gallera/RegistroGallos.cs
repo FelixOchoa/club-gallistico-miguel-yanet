@@ -22,13 +22,13 @@ namespace Gallera
         private void TBPeso_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-               (e.KeyChar != '.'))
+               (e.KeyChar != ','))
             {
                 e.Handled = true;
             }
 
             // only allow one decimal point
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
             {
                 e.Handled = true;
             }
@@ -40,7 +40,7 @@ namespace Gallera
 
             gallo.Id = TBID.Text;
             gallo.Color = TBColor.Text;
-            gallo.Peso = TBPeso.Text;
+            gallo.Peso = Convert.ToDouble(TBPeso.Text);
             gallo.Pelea = "No";
             gallo.nombreDueno = TBNombreDueno.Text;
 
