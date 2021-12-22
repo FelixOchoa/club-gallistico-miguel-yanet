@@ -67,7 +67,7 @@ namespace Gallera
         private void btn_generarPdf_Click(object sender, EventArgs e)
         {
             folderBrowserDialog1.ShowDialog();
-            GeneradorPdf generador = new GeneradorPdf(Peleas, folderBrowserDialog1.SelectedPath, inpt_nombrePdf.Text);
+            GeneradorPdf generador = new GeneradorPdf(Peleas, folderBrowserDialog1.SelectedPath, inpt_nombrePdf.Text, tmePck_fecha.Value);
             generador.Crear();
         }
     }

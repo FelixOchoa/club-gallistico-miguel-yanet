@@ -15,11 +15,13 @@ namespace Gallera
         public List<Pelea> Peleas { get; set; }
         public string Path { get; set; }
         public string Nombre { get; set; }
-        public GeneradorPdf(List<Pelea> peleas, string path, string nombre)
+        public DateTime Fecha { get; set; }
+        public GeneradorPdf(List<Pelea> peleas, string path, string nombre, DateTime fecha)
         {
             Peleas = peleas;
             Path = path;
             Nombre = nombre;
+            Fecha = fecha;
         }
 
         public void Crear()
@@ -46,60 +48,81 @@ namespace Gallera
 
             Font fuente = new Font(Font.FontFamily.HELVETICA);
 
-            documento.Add(new Paragraph("DUELOS"));
+            documento.Add(new Paragraph("Coliseo gallistico Miguel Yaneth"));
+            documento.Add(Chunk.NEWLINE);
+            documento.Add(new Paragraph("Torneo del " + Fecha.ToShortDateString()));
             documento.Add(Chunk.NEWLINE);
 
             PdfPTable tblPrueba = new PdfPTable(6);
             tblPrueba.WidthPercentage = 100;
-            PdfPCell AnimalA = new PdfPCell(new Phrase("Gallo A", fuente));
-            AnimalA.BorderWidth = 0;
-            AnimalA.BorderWidthBottom = 0.75f;
-            PdfPCell PesoA = new PdfPCell(new Phrase("Peso", fuente));
-            PesoA.BorderWidth = 0;
-            PesoA.BorderWidthBottom = 0.75f;
-            PdfPCell DuenioA = new PdfPCell(new Phrase("Dueño", fuente));
-            DuenioA.BorderWidth = 0;
-            DuenioA.BorderWidthBottom = 0.75f;
-            tblPrueba.WidthPercentage = 100;
-            PdfPCell AnimalB = new PdfPCell(new Phrase("Gallo B", fuente));
-            AnimalB.BorderWidth = 0;
-            AnimalB.BorderWidthBottom = 0.75f;
-            PdfPCell PesoB = new PdfPCell(new Phrase("Peso", fuente));
-            PesoB.BorderWidth = 0;
-            PesoB.BorderWidthBottom = 0.75f;
-            PdfPCell DuenioB = new PdfPCell(new Phrase("Dueño", fuente));
-            DuenioB.BorderWidth = 0;
-            DuenioB.BorderWidthBottom = 0.75f;
+            PdfPCell Numero = new PdfPCell(new Phrase("NO.", fuente));
+            Numero.BorderWidth = 0.75f;
+            PdfPCell Galleria = new PdfPCell(new Phrase("Gallería", fuente));
+            Galleria.BorderWidth = 0.75f;
+            PdfPCell PlacaGalleria = new PdfPCell(new Phrase("Placa gallería", fuente));
+            PlacaGalleria.BorderWidth = 0.75f;
+            PdfPCell Peso = new PdfPCell(new Phrase("Peso", fuente));
+            Peso.BorderWidth = 0.75f;
+            PdfPCell Color = new PdfPCell(new Phrase("Color", fuente));
+            Color.BorderWidth = 0.75f;
+            PdfPCell Resultado = new PdfPCell(new Phrase("    Resultado", fuente));
+            Resultado.BorderWidth = 0.75f;
 
-            tblPrueba.AddCell(AnimalA);
-            tblPrueba.AddCell(PesoA);
-            tblPrueba.AddCell(DuenioA);
-            tblPrueba.AddCell(AnimalB);
-            tblPrueba.AddCell(PesoB);
-            tblPrueba.AddCell(DuenioB);
+
+            tblPrueba.AddCell(Numero);
+            tblPrueba.AddCell(Galleria);
+            tblPrueba.AddCell(PlacaGalleria);
+            tblPrueba.AddCell(Peso);
+            tblPrueba.AddCell(Color);
+            tblPrueba.AddCell(Resultado);
 
             foreach (var animal in Peleas)
             {
-                AnimalA = new PdfPCell(new Phrase(animal.Gallo1.Id, fuente));
-                AnimalA.BorderWidth = 0;
-                PesoA = new PdfPCell(new Phrase(animal.Gallo1.Peso.ToString(), fuente));
-                PesoA.BorderWidth = 0;
-                DuenioA = new PdfPCell(new Phrase(animal.Gallo1.nombreDueno.ToString(), fuente));
-                DuenioA.BorderWidth = 0;
-                AnimalB = new PdfPCell(new Phrase(animal.Gallo2.Id, fuente));
-                AnimalB.BorderWidth = 0;
-                PesoB = new PdfPCell(new Phrase(animal.Gallo2.Peso.ToString(), fuente));
-                PesoB.BorderWidth = 0;
-                DuenioB = new PdfPCell(new Phrase(animal.Gallo2.nombreDueno, fuente));
-                DuenioB.BorderWidth = 0;
+                for (int i = 0; i < 2; i++)
+                {
+                    if (i == 0)
+                    {
+                        Galleria = new PdfPCell(new Phrase(animal.Gallo1.nombreDueno, fuente));
+                        Galleria.BorderWidth = 0.75f;
+                        PlacaGalleria = new PdfPCell(new Phrase(animal.Gallo1.Id.ToString(), fuente));
+                        PlacaGalleria.BorderWidth = 0.75f;
+                        Peso = new PdfPCell(new Phrase(animal.Gallo1.Peso.ToString(), fuente));
+                        Peso.BorderWidth = 0.75f;
+                        Color = new PdfPCell(new Phrase(animal.Gallo1.Color.ToString(), fuente));
+                        Color.BorderWidth = 0.75f;
+                        Numero = new PdfPCell(new Phrase((Peleas.IndexOf(animal) + 1).ToString(), fuente));
+                        Numero.BorderWidth = 0.75f;
+                        Numero.BorderWidthBottom = 0;
+                        Resultado = new PdfPCell(new Phrase(string.Empty, fuente));
+                        Resultado.BorderWidth = 0.75f;
+                        Resultado.BorderWidthBottom = 0;
+                    }
+                    else
+                    {
+                        Galleria = new PdfPCell(new Phrase(animal.Gallo2.nombreDueno, fuente));
+                        Galleria.BorderWidth = 0.75f;
+                        PlacaGalleria = new PdfPCell(new Phrase(animal.Gallo2.Id.ToString(), fuente));
+                        PlacaGalleria.BorderWidth = 0.75f;
+                        Peso = new PdfPCell(new Phrase(animal.Gallo2.Peso.ToString(), fuente));
+                        Peso.BorderWidth = 0.75f;
+                        Color = new PdfPCell(new Phrase(animal.Gallo2.Color.ToString(), fuente));
+                        Color.BorderWidth = 0.75f;
+                        Numero = new PdfPCell(new Phrase(string.Empty, fuente));
+                        Numero.BorderWidth = 0.75f;
+                        Numero.BorderWidthTop = 0;
+                        Resultado = new PdfPCell(new Phrase(string.Empty, fuente));
+                        Resultado.BorderWidth = 0.75f;
+                        Resultado.BorderWidthTop = 0;
+                    }
 
-                tblPrueba.AddCell(AnimalA);
-                tblPrueba.AddCell(PesoA);
-                tblPrueba.AddCell(DuenioA);
-                tblPrueba.AddCell(AnimalB);
-                tblPrueba.AddCell(PesoB);
-                tblPrueba.AddCell(DuenioB);
-
+                    tblPrueba.AddCell(Numero);
+                    tblPrueba.AddCell(Galleria);
+                    tblPrueba.AddCell(PlacaGalleria);
+                    tblPrueba.AddCell(Peso);
+                    tblPrueba.AddCell(Color);
+                    tblPrueba.AddCell(Resultado);
+                }
+                
             }
 
             documento.Add(tblPrueba);
